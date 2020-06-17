@@ -38,3 +38,7 @@ dependencies {
 tasks.withType(JavaCompile) {
     options.encoding = 'UTF-8'
 }
+// Gradleプロセス自体のシステムプロパティ(System.properties)をすべて、起動するJavaプロセスのシステムプロパティ(systemProperties)に設定
+tasks.withType(Test) {
+    systemProperties System.properties
+}
