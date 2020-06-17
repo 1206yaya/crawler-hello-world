@@ -5,6 +5,7 @@ import static org.hamcrest.CoreMatchers.containsString;
 import static org.hamcrest.CoreMatchers.is;
 import static org.junit.Assert.assertThat;
 
+import java.time.LocalDateTime;
 import java.util.concurrent.TimeUnit;
 
 import org.junit.Test;
@@ -45,6 +46,7 @@ public class GoogleCrawler {
 		assertThat(actualTitile, is(containsString("Google")));
 		long end = System.currentTimeMillis();
 		System.out.println(timeFormat(end - start));
+		System.out.println(LocalDateTime.now());
 	}
 	
 	
