@@ -39,6 +39,7 @@ public class GoogleCrawler {
 		System.out.println("---------------- start open");
 		GooglePage googlepage = open("https://www.google.co.jp", GooglePage.class);
 		System.out.println("start getTitle");
+		sleep();
 		String actualTitile = googlepage.context();
 		System.out.println("TITLE: " + actualTitile);
 		assertThat(actualTitile, is(containsString("Google")));
@@ -47,5 +48,12 @@ public class GoogleCrawler {
 	}
 	
 	
-
+	private void sleep() {
+		try {
+			Thread.sleep(10000);
+		} catch (InterruptedException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+	}
 }
